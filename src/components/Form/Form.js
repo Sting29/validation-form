@@ -125,7 +125,8 @@ export const Form = () => {
                         <div className="form_inputs__wrap">
                             <label className="form_inputs__label">
                                 <span className="form_inputs__label-text">First name</span>
-                                <input 
+                                <input
+                                    className={`${values.firstNameError ? 'form_inputs__error' : '' } `} 
                                     type="text" 
                                     name="firstName" 
                                     value={values.firstName} 
@@ -136,6 +137,7 @@ export const Form = () => {
                             <label className="form_inputs__label">
                                 <span className="form_inputs__label-text">Last name</span>
                                 <input 
+                                    className={`${values.lastNameError ? 'form_inputs__error' : '' } `}
                                     type="text" 
                                     name="lastName" 
                                     value={values.lastName} 
@@ -146,6 +148,7 @@ export const Form = () => {
                             <label className="form_inputs__label">
                                 <span className="form_inputs__label-text">Email</span>
                                 <input 
+                                    className={`${values.emailError ? 'form_inputs__error' : '' } `}
                                     type="email" 
                                     name="email" 
                                     value={values.email} 
@@ -155,14 +158,14 @@ export const Form = () => {
                             </label>
                             <label className="form_inputs__label">
                                 <span className="form_inputs__label-text">Role</span>
-                                <select name="role" onChange={handleInputChange}>
+                                <select className="input-select" name="role" onChange={handleInputChange}>
                                     {selectRoles}
                                 </select>
                             </label>
                         </div>
 
                         <label>
-                            <input type="submit" value="Save" disabled={isValid}/>
+                            <input className="form-button" type="submit" value="Save" disabled={isValid}/>
                         </label>
                     </div>
                 </fieldset>
