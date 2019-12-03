@@ -6,6 +6,8 @@
 .page-title {
     text-align: start;
     margin-bottom: 25px;
+    color: blue;
+    font-size: 22px;
 }
 
 .form_inputs {
@@ -33,4 +35,25 @@
 .form_inputs__label span {
     text-align: start;
     margin: 10px 0;
+}
+
+.form_inputs__label input {
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+select {
+    height: 43px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form_inputs__label-text {
+    font-size: 16px;
+    color: blue;
+}
+
+.form_inputs__label-error {
+    color: red;
 }

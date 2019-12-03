@@ -48,10 +48,6 @@ export const Form = () => {
         const name = event.target.name;
         const type = event.target.type
 
-        console.log(type)
-        console.log(name);
-        console.log(value);
-
         if (type === 'text') {
             if(value.length === 0) {
                 setValues({
@@ -85,13 +81,18 @@ export const Form = () => {
                 ...values,
                 [name]: value
             })   
-        }
-        
+        }    
     }
 
     const handleSubmit = event => {
         event.preventDefault();
-        alert(JSON.stringify(values));
+        const uploadObject = {
+            firstName: values.firstName,
+            lastName: values.lastName,
+            email: values.email,
+            role: values.role
+        }
+        alert(JSON.stringify(uploadObject));
     }
 
     useEffect(() => {
@@ -105,8 +106,6 @@ export const Form = () => {
         }
         isFormValid();
     }, [values]);
-
-    
 
     const selectRoles = roles.map(item => {
         return (
@@ -125,37 +124,37 @@ export const Form = () => {
                     <div className="form_inputs">
                         <div className="form_inputs__wrap">
                             <label className="form_inputs__label">
-                                <span>First name</span>
+                                <span className="form_inputs__label-text">First name</span>
                                 <input 
                                     type="text" 
                                     name="firstName" 
                                     value={values.firstName} 
                                     placeholder="First name"
                                     onChange={handleInputChange}/>
-                                <span>{values.firstNameError}</span>
+                                <span className="form_inputs__label-error">{values.firstNameError}</span>
                             </label>
                             <label className="form_inputs__label">
-                                <span>Last name</span>
+                                <span className="form_inputs__label-text">Last name</span>
                                 <input 
                                     type="text" 
                                     name="lastName" 
                                     value={values.lastName} 
                                     placeholder="Last name"
                                     onChange={handleInputChange} />
-                                    <span>{values.lastNameError}</span>
+                                    <span className="form_inputs__label-error">{values.lastNameError}</span>
                             </label>
                             <label className="form_inputs__label">
-                                <span>Email</span>
+                                <span className="form_inputs__label-text">Email</span>
                                 <input 
                                     type="email" 
                                     name="email" 
                                     value={values.email} 
                                     placeholder="email"
                                     onChange={handleInputChange} />
-                                <span>{values.emailError}</span>
+                                <span className="form_inputs__label-error">{values.emailError}</span>
                             </label>
                             <label className="form_inputs__label">
-                                <span>Role</span>
+                                <span className="form_inputs__label-text">Role</span>
                                 <select name="role" onChange={handleInputChange}>
                                     {selectRoles}
                                 </select>
