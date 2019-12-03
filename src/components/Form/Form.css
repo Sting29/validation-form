@@ -1,0 +1,36 @@
+.form-page {
+    max-width: 800px;
+    margin: 25px auto;
+}
+
+.page-title {
+    text-align: start;
+    margin-bottom: 25px;
+}
+
+.form_inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form_inputs__wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form_inputs__label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 380px;
+    margin-bottom: 30px;
+}
+
+.form_inputs__label span {
+    text-align: start;
+    margin: 10px 0;
+}
